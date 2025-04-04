@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новости — Минцифры</title>
+  <link rel="stylesheet" href="css/news.css">
+  <link rel="icon" href="img/menu/logo.svg" type="image/x-icon">
+</head>
+<body>
+  <header class="news-header">
+    <div class="container">
+      <a href="index.html" class="logo-link">
+        <img src="img/logo-white.svg" alt="Логотип Минцифры" class="news-logo" />
+      </a>
+      <h1>Новости ИТ-сообщества Амурской области</h1>
+    </div>
+  </header>
+
+  <main class="news-main">
+    <div class="container" id="news-list">
+      <!-- Новости будут загружены сюда -->
+    </div>
+  </main>
+
+  <script>
+    fetch('data/news.json')
+      .then(res => res.json())
+      .then(news => {
+        const container = document.getElementById('news-list');
+        news.forEach(item => {
+          const block = document.createElement('div');
+          block.classList.add('news-card');
+          block.innerHTML = `
+            <div class="news-image">
+              <img src="${item.image}" alt="${item.title}">
+            </div>
+            <div class="news-content">
+              <div class="news-date">${new Date(item.date).toLocaleDateString('ru-RU')}</div>
+              <h2 class="news-title">${item.title}</h2>
+              <p class="news-text" style="display:none">${item.text}</p>
+              <button class="news-toggle">Читать далее</button>
+            </div>
+          `;
+          container.appendChild(block);
+        });
+
+        container.addEventListener('click', e => {
+          if (e.target.classList.contains('news-toggle')) {
+            const text = e.target.previousElementSibling;
+            if (text.style.display === 'none') {
+              text.style.display = 'block';
+              e.target.textContent = 'Скрыть';
+            } else {
+              text.style.display = 'none';
+              e.target.textContent = 'Читать далее';
+            }
+          }
+        });
+      });
+  </script>
+</body>
+</html>

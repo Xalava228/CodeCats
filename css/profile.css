@@ -1,0 +1,203 @@
+/* css/profile.css */
+
+body {
+  font-family: 'Manrope-SemiBold', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('../img/background1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+.profile-container {
+  max-width: 800px;
+  margin: 80px auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #335ebd;
+}
+
+.profile-header .role {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.profile-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.info-item {
+  width: 48%;
+  margin-bottom: 15px;
+}
+
+.info-item label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.info-item span {
+  display: block;
+  background-color: #f7f7f7;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.profile-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.logout-button {
+  text-decoration: none;
+  background-color: #335ebd;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Стили для списка мероприятий */
+.events-list {
+    margin-top: 30px;
+}
+
+.events-list h2 {
+    text-align: center;
+    color: #335ebd;
+    margin-bottom: 20px;
+}
+
+.event-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.event-item:hover {
+    background-color: #f1f1f1;
+}
+
+.event-details {
+    flex: 1;
+}
+
+.event-details strong {
+    display: block;
+    font-size: 1.1em;
+    color: #335ebd;
+    margin-bottom: 5px;
+}
+
+.event-details small {
+    color: #777;
+}
+
+.signup-button {
+    text-decoration: none;
+    background-color: #335ebd;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.signup-button:hover {
+    background-color: #264f9d;
+}
+
+
+
+.logout-button:hover {
+  background-color: #264f9d;
+}
+
+
+
+.events-list {
+    margin-top: 30px;
+    padding: 0 15px;
+}
+
+.events-list h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #335ebd;
+    margin-bottom: 20px;
+}
+
+.event-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.event-details {
+    flex: 1;
+    margin-right: 15px;
+}
+
+.event-details strong {
+    display: block;
+    font-size: 1.2em;
+    color: #335ebd;
+    margin-bottom: 8px;
+}
+
+.event-details small {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.signup-button {
+    background-color: #335ebd;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.signup-button:hover {
+    background-color: #264f9d;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .info-item {
+    width: 100%;
+  }
+}

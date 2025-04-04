@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Минцифры — Главная</title>
+    <link rel="icon" href="img/menu/logo.svg" type="image/x-icon">
+	<script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" href="styles.css?v=2.2">
+</head>
+
+
+
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <a href="index.html" target="_blank">
+        <img src="img/menu/logo.svg" alt="Логотип">
+      </a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <h4>МИНИСТЕРСТВО ЦИФРОВОГО <br> РАЗВИТИЯ И СВЯЗИ АМУРСКОЙ ОБЛАСТИ</h4>
+        <li><a href="index.html"><img src="img/menu/Home.png" class="menu-icon" alt="">Главная</a></li>
+        <li><a href="calendar.html"><img src="img/menu/Calendar.png" class="menu-icon" alt="">Календарь</a></li>
+        <li><a href="news.html"><img src="img/menu/news.png" class="menu-icon" alt="">Новости</a></li>
+      </ul>
+    </nav>
+    <div class="phone">
+      <div class="phone-group">
+        <img src="img/menu/phone.png" class="phone-icon" alt="Телефон">
+        <a class="phone-link" href="tel:84162596256">8 (4162) 596-256</a>
+      </div>
+      <div class="social-group">
+        <a href="login.html" target="_blank"><img src="img/login.png" class="social-icon" alt="Войти"></a>
+        <a href="register.html" target="_blank"><img src="img/menu/register.png" class="social-icon" alt="Регистрация"></a>
+      </div>
+    </div>
+    <button class="hamburger-menu" aria-label="Открыть меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+
+
+
+<nav class="mobile-nav">
+  <div class="mobile-logo">
+    <img src="img/menu/logo.svg" alt="Логотип">
+  </div>
+  <button class="close-menu">&times;</button>
+  <ul>
+    <li><a href="index.html"><img src="img/menu/Home.png" class="menu-icon" alt="">Главная</a></li>
+    <li><a href="calendar.html"><img src="img/menu/Calendar.png" class="menu-icon" alt="">Календарь</a></li>
+    <li><a href="news.html"><img src="img/menu/news.png" class="menu-icon" alt="">Новости</a></li>
+  </ul>
+  <div class="mobile-contact">
+    <a href="tel:84162596256" class="mobile-phone">
+      <img src="img/menu/phone.png" class="phone-icon" alt="Телефон">8 (4162) 596-256
+    </a>
+    <div class="mobile-social">
+      <a href="login.html" target="_blank">
+        <img src="img/login.png" class="social-icon" alt="Войти">
+      </a>
+      <a href="register.html" target="_blank">
+        <img src="img/menu/register.png" class="social-icon" alt="Регистрация">
+      </a>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="overlay"></div>
+
+
+
+
+<section class="hero">
+  <div class="hero-content">
+    <h1 id="hero-headline">ПЕРЕДОВАЯ ПЛАТФОРМА <br>ИТ-СООБЩЕСТВА</h1>
+    <p id="hero-description" class="hero-description">
+      Здесь вы найдете актуальные события, новости и сможете участвовать <br>в жизни ИТ-сообщества Амурской области
+    </p>
+    <div class="buttons">
+      <a href="login.html" id="btn-primary" class="btn-order">Записаться</a>
+      <a href="#form" id="btn-more" class="btn-more">Подробнее</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- О НАС -->
+<section id="about" class="about">
+  <div class="about-wrapper" style="background: url('img/') no-repeat left top; background-size: auto 80%; padding: 30px; border-radius: 35px; min-width: 250px; max-width: 1400px; margin: 50px auto 0; border: 2px solid #216bb6;">
+  <div class="container about-container">
+      <div class="about-content">
+		<div class="about-header" style="position: relative;">
+		<h2>О МИНИСТЕРСТВЕ</h2>
+		</div>
+        <p>
+          Министерство цифрового развития и связи Амурской области (Минцифры АО) — ключевой исполнительный орган государственной власти, отвечающий за цифровизацию региона, развитие связи и информационных технологий. Министерство реализует государственную политику в сфере информационной безопасности, цифровой трансформации госуправления и повышения качества государственных услуг. Основные направления деятельности включают развитие цифровой инфраструктуры, внедрение современных технологий и реализацию проектов «Цифровая экономика», «Умный город» и «Безопасный город».
+        </p>
+      </div>
+      <div class="about-truck">
+        <img src="img/8duhnkodpoz3nt8to678xenrc1giw1tw.png" loading="lazy" alt="Минцифры">
+      </div>
+    </div>
+</section>
+
+
+
+<section id="news" class="news-section">
+  <div class="container">
+    <h2>НОВОСТИ</h2>
+    <div class="services-grid" id="news-preview"></div>
+  </div>
+</section>
+
+
+
+
+<!-- КАЛЕНДАРЬ -->
+<section id="form" class="form-section" style="background: url('img/background1.jpg') no-repeat center center; background-size: cover;">
+  <div class="form-container">
+    <div class="form-info">
+      <h2 class="form-title">КАЛЕНДАРЬ</h2>
+      <p class="form-subtitle">Ближайшие события</p>
+
+      <table class="calendar-table" id="calendar-preview">
+        <thead>
+          <tr>
+            <th>Дата</th>
+            <th>Событие</th>
+            <th>Формат</th>
+            <th>Место</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+
+      <div class="calendar-link-container" style="text-align: right; margin-top: 15px;">
+        <a href="calendar.html" class="calendar-more-link">Смотреть все события →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- КОНТАКТЫ -->
+<section id="contact" class="contact-section">
+    <div class="container contact-container">
+        <div class="contact-info">
+            <h2>КОНТАКТЫ</h2>
+            <div class="contact-block">
+                <img class="contact-icon" src="img/geo.svg" alt="Адрес">
+                <div>
+                    <p class="contact-title">Адрес</p>
+                    <p class="contact-text">
+                        675000, Амурская область, <br>г. Благовещенск,
+                        ул. Ленина, д. 135
+                    </p>
+                </div>
+            </div>
+<div class="contact-block">
+  <img class="contact-icon" src="img/phone3.svg" alt="Телефоны">
+  <div>
+    <p class="contact-title">Телефон</p>
+	<p class="contact-text">
+  <span class="contact-label">Контактный номер:</span>
+  <span class="phone-number">+7 (4162) 596-256</span><br>
+</p>
+
+</div>
+</div>
+<div class="contact-block">
+  <img class="contact-icon" src="img/mail.svg" alt="Почта">
+  <div>
+    <p class="contact-title">Электронная почта</p>
+    <div class="email-container">
+      <p class="contact-text email-text">mail@it.amurobl.ru</p>
+      <button id="copy-email-btn" class="copy-email-btn">СКОПИРОВАТЬ</button>
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="map-wrapper">
+  <div class="map-label">Мы на карте</div>
+  <div class="map-container">
+    <div>
+	<iframe 
+		src="https://yandex.ru/map-widget/v1/?um=constructor%3A3ee4ff1582b66bce7901be080a6eff70d5e92cf965b7d96730e272745c8efa35&amp;source=constructor" 
+		frameborder="0">
+	</iframe>
+	</div>
+  </div>
+</div>
+</div>
+</section>
+
+
+
+<!-- ФУТЕР -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-top">
+<div class="footer-info">
+  <div style="display: flex; align-items: center; gap: 15px;">
+    <img src="img/logo-white.svg" alt="Логотип" style="height: 50px;">
+    <div style="line-height: 1.2;">
+      <strong>МИНИСТЕРСТВО ЦИФРОВОГО<br>РАЗВИТИЯ И СВЯЗИ АМУРСКОЙ ОБЛАСТИ</strong>
+    </div>
+  </div>
+  <p style="margin-top: 50px;"><br>© 2025 Все права защищены.</p>
+</div>
+
+            <div class="footer-navigation">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="index.html">• Главная – узнайте больше о нас</a></li>
+                    <li><a href="calendar.html">• Календарь – подробная информация</a></li>
+                    <li><a href="news.html">• Новости – самое свежее</a></li>
+                    <li><a href="#contact">• Контакты – данные для связи</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <div class="contact-item">
+                    <img src="img/geo.webp" loading="lazy" alt="Гео" class="icon">
+                    <p><strong class="circe-bold">Благовещенск</strong><br>ул. Ленина, д. 135</p>
+                </div>
+                <div class="contact-item">
+                    <img src="img/phone2.webp" loading="lazy" alt="Телефон" class="icon">
+                    <p><strong class="inter-bold">8 (4162) 596-256</strong><br>mail@it.amurobl.ru</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+	<script src="js/scriptik.js"></script>
+	
+<script>
+  fetch('data/events.json')
+    .then(res => res.json())
+    .then(events => {
+      const upcoming = events
+        .filter(e => new Date(e.date) >= new Date())
+        .sort((a, b) => new Date(a.date) - new Date(b.date))
+        .slice(0, 4);
+
+      const tbody = document.querySelector('#calendar-preview tbody');
+
+      upcoming.forEach(e => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${new Date(e.date).toLocaleDateString('ru-RU')}</td>
+          <td>${e.title}</td>
+          <td>${e.format}</td>
+          <td>${e.place}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    });
+</script>
+
+
+
+
+<script>
+  fetch('data/news.json')
+    .then(res => {
+      if (!res.ok) throw new Error('Файл не найден или ошибка сервера');
+      return res.json();
+    })
+    .then(news => {
+      const container = document.getElementById('news-preview');
+      const topNews = news.slice(0, 4);
+
+      topNews.forEach(item => {
+        const card = document.createElement('div');
+        card.classList.add('service-card');
+        card.style.padding = "20px";
+        card.style.border = "1px solid #ccc";
+        card.style.borderRadius = "10px";
+        card.style.background = "#f9f9f9";
+        card.style.marginBottom = "15px";
+        card.style.overflow = "hidden";
+
+        card.innerHTML = `
+          <img src="data/${item.image}" alt="${item.title}" style="width:100%; height:200px; object-fit:cover; border-radius:8px; margin-bottom:15px;">
+          <div class="service-title">${item.title}</div>
+          <div class="news-date">${new Date(item.date).toLocaleDateString('ru-RU')}</div>
+        `;
+        container.appendChild(card);
+      });
+    })
+    .catch(error => {
+      console.error('Ошибка загрузки:', error);
+      document.getElementById('news-preview').innerHTML = '<p style="color:red">Не удалось загрузить новости. Проверьте путь к файлу JSON.</p>';
+    });
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

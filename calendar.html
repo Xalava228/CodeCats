@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Календарь IT-событий</title>
+  <link rel="icon" href="img/menu/logo.svg" type="image/x-icon" />
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: #f1f6fb;
+      color: #222;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .calendar-header {
+      background-color: #216bb6;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .calendar-logo {
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 25px;
+      justify-content: center;
+    }
+
+    .filters input,
+    .filters select,
+    .filters button {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      font-size: 1em;
+    }
+
+    .filters button {
+      background-color: #216bb6;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .calendar-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .calendar-table th,
+    .calendar-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    .calendar-table th {
+      background-color: #e8f0fa;
+      color: #216bb6;
+      font-weight: 600;
+    }
+
+    .calendar-footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #154b84;
+      color: white;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+      .filters {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .calendar-table thead {
+        display: none;
+      }
+
+      .calendar-table,
+      .calendar-table tbody,
+      .calendar-table tr,
+      .calendar-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .calendar-table tr {
+        margin-bottom: 20px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        padding: 10px;
+      }
+
+      .calendar-table td {
+        padding: 10px;
+        font-size: 0.8rem;
+        border-bottom: none;
+      }
+
+      .calendar-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #216bb6;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="calendar-header">
+    <div class="container">
+      <a href="index.html" class="logo-link">
+        <img src="img/logo-white.svg" alt="Логотип Минцифры" class="calendar-logo" />
+      </a>
+      <h1>Календарь IT-событий Амурской области</h1>
+    </div>
+  </header>
+
+  <main class="calendar-main">
+    <div class="container">
+      <div class="filters">
+        <input type="date" id="filter-date" />
+        <select id="filter-format">
+          <option value="">Формат</option>
+          <option value="Онлайн">Онлайн</option>
+          <option value="Офлайн">Офлайн</option>
+        </select>
+        <select id="filter-tag">
+          <option value="">Тема</option>
+          <option value="хакатон">Хакатон</option>
+          <option value="конференция">Конференция</option>
+          <option value="выставка">Выставка</option>
+          <option value="безопасность">Инфобезопасность</option>
+        </select>
+        <button onclick="applyFilters()">Применить</button>
+      </div>
+
+      <table class="calendar-table" id="calendar-table">
+        <thead>
+          <tr>
+            <th>Дата</th>
+            <th>Событие</th>
+            <th>Формат</th>
+            <th>Место</th>
+            <th>Теги</th>
+          </tr>
+        </thead>
+        <tbody id="calendar-body">
+          <!-- Данные подгружаются скриптом -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="calendar-footer">
+    <div class="container">
+      <p>© 2025 Минцифры Амурской области. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script>
+    let allEvents = [];
+
+    fetch('data/events.json')
+      .then(res => res.json())
+      .then(events => {
+        allEvents = events;
+        renderEvents(events);
+      });
+
+    function renderEvents(events) {
+      const tbody = document.getElementById('calendar-body');
+      tbody.innerHTML = '';
+
+      events.forEach(e => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td data-label="Дата">${new Date(e.date).toLocaleDateString('ru-RU')}</td>
+          <td data-label="Событие">${e.title}</td>
+          <td data-label="Формат">${e.format}</td>
+          <td data-label="Место">${e.place}</td>
+          <td data-label="Теги">#${e.tags.replace(/,/g, ' #')}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function applyFilters() {
+      const dateVal = document.getElementById('filter-date').value;
+      const formatVal = document.getElementById('filter-format').value;
+      const tagVal = document.getElementById('filter-tag').value.toLowerCase();
+
+      const filtered = allEvents.filter(event => {
+        const matchesDate = !dateVal || event.date === dateVal;
+        const matchesFormat = !formatVal || event.format === formatVal;
+        const matchesTag = !tagVal || event.tags.toLowerCase().includes(tagVal);
+        return matchesDate && matchesFormat && matchesTag;
+      });
+
+      renderEvents(filtered);
+    }
+  </script>
+</body>
+</html>

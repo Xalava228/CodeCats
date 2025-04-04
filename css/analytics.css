@@ -1,0 +1,102 @@
+/* css/analytics.css */
+body {
+    font-family: 'Manrope-SemiBold', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f2f2f2;
+    color: #333;
+}
+
+.analytics-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.analytics-container header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.analytics-container h1 {
+    color: #335ebd;
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.analytics-section {
+    margin-bottom: 30px;
+}
+
+.analytics-section h2, .analytics-section h3 {
+    color: #335ebd;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.analytics-section form {
+    margin-bottom: 20px;
+}
+
+.analytics-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.analytics-section input, 
+.analytics-section textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.analytics-section button {
+    padding: 10px 20px;
+    background-color: #335ebd;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.analytics-section button:hover {
+    background-color: #264f9d;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #335ebd;
+    color: #fff;
+}
+
+.back-button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #335ebd;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #264f9d;
+}

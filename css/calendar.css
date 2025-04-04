@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f1f6fb;
+  color: #222;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Шапка */
+.calendar-header {
+  background-color: #216bb6;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.calendar-logo {
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+/* Фильтры */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+  justify-content: center;
+}
+
+.filters input,
+.filters select,
+.filters button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 1em;
+}
+
+.filters button {
+  background-color: #216bb6;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filters button:hover {
+  background-color: #154b84;
+}
+
+/* Таблица */
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-table th, .calendar-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.calendar-table th {
+  background-color: #e8f0fa;
+  color: #216bb6;
+  font-weight: 600;
+}
+
+.calendar-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Подвал */
+.calendar-footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #154b84;
+  color: white;
+}
+
+/* Адаптация */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .calendar-table, .calendar-table thead {
+    display: none;
+  }
+
+  .calendar-table, .calendar-table tbody, .calendar-table tr, .calendar-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .calendar-table td {
+    padding: 12px;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .calendar-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #216bb6;
+    display: block;
+    margin-bottom: 5px;
+  }
+}

@@ -1,0 +1,256 @@
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: 'Segoe UI', sans-serif !important;
+  background: url('../img/background1.jpg') no-repeat center center fixed !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  color: #222 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+
+.title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: white; /* Темный бирюзовый */
+    
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.registration-form, .family-section {
+    width: 60%;
+    padding: 100px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.agreement-text {
+  font-size: 0.8rem;
+  color: gray;
+  margin-top: 15px;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.agreement-link {
+  color: #216bb6;
+  text-decoration: underline;
+}
+
+
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+.input-group input, .family-form select {
+    width: 97%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #333;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.gender {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.gender label {
+    margin-right: 15px;
+    color: #333;
+}
+
+.gender input {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    accent-color: #333; /* Яркий синий */
+}
+
+.terms {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.terms a {
+    color: #333; /* Темный синий */
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    padding: 10px 15px;
+    background: #333; /* Яркий синий */
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background: #333; /* Голубой при наведении */
+    transform: scale(1.05);
+}
+
+/* Светлая тема для блока "Семья" */
+.family-section {
+    width: 35%;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: auto;
+    margin-bottom: 300px;
+}
+
+.family-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333; /* Темный бирюзовый */
+}
+
+.photo-upload {
+    margin-top: 10px;
+    width: 100%;
+    height: 120px;
+    background: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.family-section .btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Светлая тема для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.close-btn:hover {
+    color: #ff0000;
+}
+
+.family-form .input-group {
+    margin-bottom: 15px;
+}
+
+.family-form .input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+.family-form .input-group input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #333;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+
+.family-form select:focus {
+    border-color: #333; /* Яркий синий */
+    outline: none;
+}
+
+.family-form .gender {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.family-form .gender label {
+    margin-right: 15px;
+    color: #333;
+}
+
+.family-form .gender input {
+    margin-right: 8px;
+}
+
+.home-button {
+    position: absolute; /* Абсолютное позиционирование внутри .registration-container */
+    bottom: 20px; /* Отступ снизу */
+    right: 20px; /* Отступ справа */
+    padding: 10px 20px; /* Внутренние отступы */
+    background-color: #0BADBF; /* Цвет фона */
+    color: #FFF; /* Цвет текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 5px; /* Скругление углов */
+    font-size: 16px; /* Размер текста */
+    font-weight: bold; /* Жирный текст */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета */
+}
+
+.home-button:hover {
+    background-color: #098C9F; /* Цвет фона при наведении */
+}
